@@ -1,31 +1,23 @@
-# Adonis fullstack application
+# Pushing and Pulling to and from Docker Hub steps
 
-This is the fullstack boilerplate for AdonisJs, it comes pre-configured with.
+## Getting an image from Docker Hub
+### docker run --rm -p 3333:3333 rocker/verse
+### docker pull rocker/verse 
+### Log in on https://hub.docker.com/
+1. Click on Create Repository.
+2. Choose a name (e.g. verse_gapminder) and a description for your repository and click Create.
+3. Log into the Docker Hub from the command line
+4. docker login --username=yourhubusername --email=youremail@company.com
+5. Check the image ID using: docker images
+6. and tag your image
 
-1. Bodyparser
-2. Session
-3. Authentication
-4. Web security middleware
-5. CORS
-6. Edge template engine
-7. Lucid ORM
-8. Migrations and seeds
+docker tag bb38976d03cf yourhubusername/verse_gapminder:firsttry
 
-## Setup
+7. Push your image to the repository you created
 
-Use the adonis command to install the blueprint
+docker push yourhubusername/verse_gapminder
 
-```bash
-adonis new yardstick
+
 ```
-
-or manually clone the repo and then run `npm install`.
-
-
-### Migrations
-
-Run the following command to run startup migrations.
-
-```js
-adonis migration:run
-```
+## Docker hub repo link
+https://hub.docker.com/repository/docker/jehanne123/sca_school_assignment
